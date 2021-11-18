@@ -1,0 +1,462 @@
+:root {
+    --cor-primaria: #EE952C;
+    --cor-secundaria: #FFFFFF;
+    --cor-da-fonte: #9F9797;
+    --cor-de-fundo: #FCF5EF;
+    --cor-bhover: #7CC251;
+    --cor-preta: #000;
+    font-size: 16px;
+    --fonte-pequena: 16px;
+    --font-media: 24px;
+    --font-grande: 32px;
+    font-family: "Poppins", sans-serif;  
+    overflow-x: hidden; 
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+body::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #fdad52;        /* color of the tracking area */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: #d48224;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid #fdad52;  /* creates padding around scroll thumb */
+  }
+
+body {
+    font-size: var(--fonte-pequena);
+    background-color: var(--cor-secundaria);  
+}
+  
+ul {
+    list-style: none;
+}
+  
+a {
+    text-decoration: none;
+}
+
+header {
+    position:sticky;
+    top: 0;
+    z-index: 2;
+    background-color: var(--cor-secundaria);
+    
+}
+  
+/*  NAVBAR */
+  
+.menu {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 15px 0;
+    display: flex; /* nesses caso, deixa o nav como flex-items, mas não a ul dentro dela. o .menu é o pai e o .nav é o filho */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center; /* alinha ao centro na altura */
+}
+  
+.menu-logo a img {
+    width: 50%;
+}
+  
+.menu-nav ul {
+    display: flex; /* é o pai, e agora os li viraram flex-items */
+    flex-wrap: wrap; /* para quebrar e caber qnd diminuir a tela */
+}
+  
+.menu-nav a {
+    font-size: (var(--font-grande));
+    display: block; /* pq por padrão o a é inline, e eu quero que o padding pegue em todos os lados */
+    padding: 10px;
+    color: (var(--cor-primaria));
+}
+  
+/* NAVBAR - ANIMAÇÃO */
+  
+.menu-nav a:hover {
+    color: #ee952c;
+}
+  
+/* RESPONSIVIDADE */
+  
+  @media (max-width: 1068px) {
+    .menu-logo {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .menu-logo a img {
+      width: 30%;
+    }
+  
+    .menu-nav {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 440px) {
+    .menu-nav a {
+      font-size: (var(--fonte-pequena));
+      padding: 3px;
+    }
+  }
+/* PARALLAX */
+  .parallax {
+    background-image: url("../assets/banner-bk.png");
+    min-height: 50vh;
+    /* width: 100vw; */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: relative; 
+  }
+
+.parallax img{
+    width: 70%;
+    margin: 3rem 0;
+}
+
+.parallax button{
+    position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: var(--cor-primaria);
+  color: white;
+  padding: 0.5rem 3rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 1rem;
+  text-transform: uppercase;
+}
+
+.parallax a{
+    text-decoration: none;
+    color: var(--cor-de-fundo);
+}
+
+.parallax button:hover{
+    background: var(--cor-bhover);
+    transition: background 0.4s ease-in-out;
+}
+
+/* CAROUSEL*/
+.item img {
+    text-align: center;
+    justify-content: center;
+    background: var(--cor-de-fundo);
+    border-radius: 30px;
+    transform: scale(0.8);
+    opacity: 0.9;
+    width: 6.5rem;
+    height: 14.75rem;
+
+}
+.box-midias{
+    cursor: pointer;
+    padding: 20px;
+}
+
+.box-midias:hover{
+    transition: transform .6s ease-in-out;
+    transform: scale(0.9);
+    opacity: 1;
+    background: var(--cor-primaria);
+}
+
+/* FINAL DO CAROSEUL */
+
+
+/* AQUI COMEÇA O ESTILO DOS 6 PRODUTOS*/
+
+
+h2 {
+    font-size: var(--font-grande);
+    color: var(--cor-preta);   
+    margin: 4rem 0 2.5rem 30rem;
+}
+
+h3 {
+    font-size: var(--font-grande);
+    color: var(--cor-preta);   
+    text-align: center;
+}
+
+/* Transformando os itens em grid de 3 por 2*/
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    grid-template-rows: repeat(2, auto);
+    max-width: 100vw;
+    justify-content: center;
+    gap: 4rem;      
+    text-align: center; 
+    margin-bottom: 2rem;
+}
+
+.produtos-itens img {
+    width: 152px;
+    height: 154px;
+    margin-top: 1rem;
+}
+/* Estilização de dentro das box dos produtos*/
+.produtos-itens{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--cor-de-fundo);
+    border-radius: 1.5rem;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+.produtos-itens p{
+    align-self: flex-start;
+    padding-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+/* Estilização dos paragráfos dentro dos produtos*/
+.produtos-itens-descricao {
+    font-size: var(--fonte-pequena);
+    margin-top: 1rem;
+}
+.produtos-itens-quant {
+    font-size: var(--fonte-pequena);
+    color: var(--cor-da-fonte);
+}
+.produtos-itens-preco {
+    font-size: var(--font-media);
+    color: var(--cor-primaria);
+}
+
+/* 
+Estilização do botão de adicionar
+Foi utilizada a tag a para ficar mais fácil de direcionar
+*/
+.produtos-itens a {
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    background-color: var(--cor-primaria);
+    padding: 0.5rem 4rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    font-size: var(--font-media);
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+/* Animação do bottão quando passar o cursor por cima*/
+.produtos-itens:hover {
+    transition: transform 0.2s ease-out;
+    transform: scale(1.02);
+}
+.produtos-itens a:hover {
+    background: var(--cor-bhover);
+    transition: background 0.4s ease-in-out;
+}
+
+label {
+    margin-right: 0.5rem;
+}
+
+#escolha {
+    font-size: var(--fonte-pequena);
+	margin: 0 auto;
+	border: none;
+	margin-bottom: 1rem;
+	border-radius: 2rem;
+}
+
+select {    
+    width:140px;  /* Tamanho final do select */    
+    overflow:hidden; /* Esconde o conteúdo que passar do tamanho especificado */
+    background-color: var(--cor-secundaria);
+} 
+    
+option {      
+    background: var(--cor-de-fundo);
+    color: var(--cor-preta);
+}
+
+.produtos-itens .detalhes {
+    text-align: center;
+	margin: 0 auto;
+	border: none;
+    color: var(--cor-primaria);
+    background: var(--cor-secundaria);
+    border: 1px solid var(--cor-secundaria)
+
+}
+
+.produtos-itens .detalhes:hover {
+    border: 1px solid var(--cor-primaria);
+    color: var(--cor-primaria);
+    background: var(--cor-secundaria);
+    transition: border 0.4s ease-in-out;
+}
+
+/* MEDIA QUERIES DOS PRODUTOS*/
+@media (min-width: 1001px) and (max-width: 1700px){
+    h2 {
+        margin: 4rem 0 2.5rem 10%;
+    }
+    
+}
+
+@media (min-width: 721px) and (max-width: 1000px){
+    h2 {
+        margin: 4rem 0 2.5rem 20%;
+    }
+    .produtos {
+        grid-template-columns: repeat(2, 300px);
+    }
+
+    .produtos-itens-preco {
+        font-size: var(--font-media);
+    }
+}
+
+@media (max-width: 720px) {
+    h2 {
+        margin: 4rem 0 2.5rem 0;
+    }
+
+    .parallax img{
+         width: 80%;
+    }
+
+    .parallax button{
+        top: 70%;
+        padding: 0.5rem 2rem;
+    }
+
+    .produtos {
+        grid-template-columns: repeat(2, 300px);
+    }
+    .produtos-itens-preco {
+        font-size: var(--font-media);
+    }
+    .newsletter {
+        margin-top: 2rem;
+    }
+    footer {
+        margin-top: 2rem;
+        flex-direction: column; 
+        justify-content: center;
+        flex-wrap: nowrap !important;   
+      }
+      .icons {
+        margin-bottom: 5rem;
+      }
+
+
+}
+
+@media (max-width: 620px) {
+    h2 {
+        margin: 4rem 0 2.5rem 5%;
+    }
+    .produtos {
+        grid-template-columns: 400px;
+        margin: 0 auto;
+    }
+    footer {
+        flex-direction: column; 
+        justify-content: center;
+        flex-wrap: nowrap;   
+    }
+    .icons {
+        margin-bottom: 5rem;
+    }
+}
+
+/* AQUI TERMINA O ESTILO DOS 6 PRODUTOS*/
+
+/* NEWSLETTER */
+
+.newsletter{
+    background-color: #FCF5EF;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    justify-items: center;
+    height: 19.25rem;
+    padding: 2rem 0;
+}
+
+.newsletter div{
+margin: 1.5rem;
+}
+ 
+.newsletter h4{
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.newsletter div input[type="email"]{
+    height: 2.5rem ;
+    width: 25rem;
+    text-align: center;
+    outline: none;  
+}
+
+
+
+.newsletter button{
+    width: 11.75rem;
+    height: 2.5rem ;
+    border-radius: 0.5rem;
+    color: #FFFFFF;
+    background-color: #EE952C ;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+/* FINAL DO NEWSLETTER */
+
+/* FOOTER */
+footer {
+    display: flex;
+    flex-wrap: wrap;    
+    justify-content: space-around;
+    align-items: center; 
+    font-size: var(--fonte-pequena);      
+    height: 15vh;  
+}
+  
+.copyright {
+    margin: 20px;
+}
+  
+.icons {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+  
+.social_media {
+    margin: 20px;
+}
+  
+.social_media i {
+    color: var(--cor-primaria);
+}  
+
+

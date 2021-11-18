@@ -1,0 +1,224 @@
+:root {
+  --cor-primaria: #EE952C;
+  --cor-secundaria: #FFFFFF;
+  --cor-da-fonte: #9F9797;
+  --cor-de-fundo: #FCF5EF;
+  --cor-bhover: #7CC251;
+  --cor-preta: #000;
+  font-size: 16px;
+  --fonte-pequena: 16px;
+  --font-media: 24px;
+  --font-grande: 32px;
+  font-family: "Poppins", sans-serif;  
+  overflow-x: hidden; 
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: #fdad52;        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #d48224;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid #fdad52;  /* creates padding around scroll thumb */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+
+body {
+    font-size: var(--fonte-pequena);
+    background-color: var(--cor-secundaria);
+    font-family: "Poppins", sans-serif;
+  }
+ul {
+    list-style: none;
+  }
+a {
+    text-decoration: none;
+  }
+/*  NAVBAR */
+
+.menu {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 15px 0;
+    display: flex; /* nesses caso, deixa o nav como flex-items, mas não a ul dentro dela. o .menu é o pai e o .nav é o filho */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center; /* alinha ao centro na altura */
+  }
+  
+.menu-logo a img {
+    width: 50%;
+  }
+  
+.menu-nav ul {
+    display: flex; /* é o pai, e agora os li viraram flex-items */
+    flex-wrap: wrap; /* para quebrar e caber qnd diminuir a tela */
+  }
+  
+.menu-nav a {
+    font-size: (var(--font-grande));
+    display: block; /* pq por padrão o a é inline, e eu quero que o padding pegue em todos os lados */
+    padding: 10px;
+    color: (var(--cor-primariaPro2));
+  }
+  
+  /* NAVBAR - ANIMAÇÃO */
+  
+.menu-nav a:hover {
+    color: #ee952c;
+  }
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 1068px) {
+    .menu-logo {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .menu-logo a img {
+      width: 30%;
+    }
+  
+    .menu-nav {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 440px) {
+    .menu-nav a {
+      font-size: (var(--fonte-pequena));
+      padding: 3px;
+    }
+  }
+
+/*  Produto */
+
+
+.prod-selecionado {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    flex-wrap: wrap;
+    background-color: var(--cor-de-fundo);
+    margin-top: 4rem;
+}
+
+.produto-img {
+    width: 100%;
+    max-width: 25rem;
+    height: auto;
+    margin-top: 1rem;
+}
+
+.nome-produto {
+    margin-top: 2.5rem;
+}
+
+.descricao-produto {
+  margin-left: 2rem;
+}
+
+.descricao-produto p{
+  margin-top: 0.5rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+.preco {
+    margin: 2.5rem 0 2.5rem;
+    color: var(--cor-primaria);
+}
+
+label {
+  margin-right: 0.5rem;
+}
+
+#escolha {
+  font-size: var(--fonte-pequena);
+margin: 0 auto;
+border: none;
+margin-bottom: 2.5rem;
+border-radius: 2rem;
+}
+
+.descricao-produto button {
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    background-color: var(--cor-primaria) ;
+    padding: 1rem 5rem;
+    margin-bottom: 2.5rem;
+    border-radius: 1rem;
+    font-size: var(--fonte-pequena);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 20%);
+    text-transform: uppercase;
+}
+
+.descricao-produto button:hover {
+    background: var(--cor-bhover);
+    transition: background 0.4s ease-in-out;
+}
+
+/* FOOTER */
+footer {
+    display: flex;
+    flex-wrap: wrap;    
+    justify-content: space-around;
+    align-items: center; 
+    font-size: var(--fonte-pequena);      
+    height: 15vh;
+    margin-top: 5rem;
+}
+  
+.copyright {
+    margin: 20px;
+}
+  
+.icons {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+  
+.social_media {
+    margin: 20px;
+}
+  
+.social_media i {
+    color: var(--cor-primaria);
+}  
+
+@media (max-width: 700px) {
+  footer {
+    flex-direction: column; 
+    justify-content: center;
+    flex-wrap: nowrap;   
+  }
+  .icons {
+    margin-bottom: 5rem;
+  }
+}

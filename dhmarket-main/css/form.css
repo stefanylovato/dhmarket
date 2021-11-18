@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: content-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #fdad52;        /* color of the tracking area */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: #d48224;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid #fdad52;  /* creates padding around scroll thumb */
+  }
+
+.img {
+  width: 25rem;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.container-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    margin: 10rem auto;
+    width: 30rem;
+    background-color: #FCF5EF;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    border-radius: 2rem;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.media {
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.media button:hover{
+    border: 0.09rem solid black;
+    transition: transform 0.1s ease-out;
+    transform: scale(0.99);
+}
+
+.media button {
+    padding: 0.3rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    border-radius: 1rem;
+    height: 1.8rem;
+    width: 24rem;
+    cursor: pointer;
+    border:  0.09rem solid transparent;
+}
+
+.media button span {
+    margin-left: 1rem;
+}
+
+.facebook-media {
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    color: #FCF5EF;
+    border: none;
+}
+
+.google-media {
+    border: none;
+}
+
+.inputs input:hover{
+background-color: #f0d1aeb7;
+}
+
+.inputs {
+    margin-bottom: 0rem;
+  
+}
+
+input{
+    border: 1px solid rgba(231, 224, 224, 0.883);
+    border-radius: 1rem;
+
+    }
+
+.inputs div input {
+    height: 2rem;
+    width: 25rem;
+    padding: 0.1rem;
+    outline: none;
+    text-align: center;
+}
+
+.column input[type="email"]{
+    margin-bottom: 0.8rem;
+}
+
+.column a {
+    margin-top: .4rem;
+    text-decoration: none;
+    color: inherit;
+    opacity: 0.7;
+    font-size: .85rem;
+}
+
+.conectar {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1rem;
+}
+
+.conectar span{
+    margin-left: 0.5rem;
+
+}
+
+.conectar input[type="checkbox"],
+label{
+    cursor: pointer;
+}
+
+
+.conectar div {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+.conectar div button {
+    background-color: #EE952C;
+    width: 20rem;
+    height: 2.5rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+    color: #FFFFFF;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 0.8rem;
+    transition-property: color, background-color;
+    transition-duration: 0.5s;
+}
+
+.conta p{
+  margin: 1.5rem 0;
+  opacity: 0.5;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ANIMAÇÕES DO BOTÃO ENTRAR */
+.conectar button:hover{
+    background-color:#b4650c;
+    color: whitesmoke;
+}
+
+.conectar button:active{
+    transition: transform 0.2s ease-out;
+    transform: scale(0.98);
+}
